@@ -298,6 +298,60 @@
     #scrollTopBtn:hover {
       background: #555;
     }
+/* ========================= */
+/*      RESPONSIVE MOBILE    */
+/* ========================= */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 60px 5%;
+    width: 100%;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero img {
+    width: 150px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-gallery {
+    grid-template-columns: repeat(2, 1fr); /* ubah 4 → 2 untuk phone */
+    gap: 10px;
+  }
+
+  .contact-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+    
   </style>
 </head>
 
@@ -513,3 +567,5 @@
   </script>
 </body>
 </html>
+
+
