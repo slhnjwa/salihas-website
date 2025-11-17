@@ -1,226 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | NurSaliha Najwa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | NurSaliha Najwa</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <style>
-        body {
-            font-family: "Poppins", sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #ffffff;
-            color: #333;
-        }
+  <style>
+    :root {
+      --bg-dark: #000;
+      --bg-light: #fff;
+      --text-dark: #000;
+      --text-light: #fff;
+      --muted: #bbb;
+    }
 
-        /* Header */
-        header {
-            background-color: #ffef00;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
+    * {margin:0;padding:0;box-sizing:border-box;}
+      body { 
+        font-family: 'Poppins', sans-serif; 
+        background: var(--bg-light); 
+        color: var(--text-dark); 
+        scroll-behavior: smooth; 
+        overflow-x: hidden; }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px;
-            background-color: #222;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        nav a:hover { color: #ffef00; }
 
-        /* Container */
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto;
-            text-align: center;
-        }
+    a {color: inherit;text-decoration: none;}
 
-        h2 {
-            margin-bottom: 10px;
-            color: #222;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-        }
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: var(--bg-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        /* About Me */
-        .about {
-            margin-bottom: 40px;
-        }
-        .about img {
-            width: 200px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+    nav .logo {font-weight: 600; font-size: 22px; color: var(--text-light);}
 
-        /* Experience */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        .experience-grid img {
-            width: 100%;
-            border-radius: 10px;
-        }
+    nav .menu a {
+      margin-left: 25px;
+      position: relative;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.3s ease;
+    }
 
-        /* Hobby */
-        .hobby-images img {
-            width: 180px;
-            margin: 10px;
-            border-radius: 10px;
-        }
+    nav .menu a.active,
+    nav .menu a:hover {
+      color: var(--text-light);
+    }
 
-        /* Memory */
-        .memory-box {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-        .memory-box img {
-            width: 100%;
-            border-radius: 8px;
-        }
+    nav .menu a.active::after,
+    nav .menu a:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: var(--text-light);
+    }
 
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
+    section {
+      padding: 80px 8%;
+      min-height: 100vh;
+      width: 85%;
+      margin: 0 auto;
+    }
 
-        footer a {
-            color: #ffef00;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        footer a:hover { color: #fff; }
-    </style>
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* ABOUT ME */
+    #about\ me {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border: none;
+      margin-top: 60px;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 100px 60px;
+      gap: 50px;
+    }
+
+    .hero .text {
+      flex: 1 1 350px;
+    }
+
+    .hero img {
+      width: 200px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* EXPERIENCE */
+    #experience {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .experience-item {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .experience-item img {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 10px;
+    }
+
+    .experience-item .desc {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* HOBBY */
+    #hobby {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .hobby-box {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hobby-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .hobby-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .hobby-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .hobby-item p {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 5px;
+      color: var(--text-dark);
+    }
+
+/* MEMORY */
+#memory {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.memory-box {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 30px;
+}
+
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.memory-gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+    /* CONTACT */
+    #contact {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .contact-box {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: inline-block;
+      padding: 40px 60px;
+      margin-top: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .contact-info a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+      color: var(--text-dark);
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      background: var(--bg-dark);
+    }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: background 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      background: #555;
+    }
+  </style>
 </head>
+
 <body>
+  <nav>
+    <div class="logo">NurSaliha Najwa</div>
+    <div class="menu">
+      <a href="#about me" class="active">About Me</a>
+      <a href="#experience">Experience & Skills</a>
+      <a href="#hobby">Hobby</a>
+      <a href="#memory">Memory</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<header>
-    <h1>NurSaliha Najwa</h1>
-    <p>Personal Portfolio</p>
-</header>
+  <section id="about me">
+    <div class="hero">
+      <div class="text">
+        <h2>Hi, I'm <strong>NurSaliha Najwa</strong> 👋</h2>
+        <p>A dedicated and motivated individual who values creativity, learning, and meaningful contributions. I enjoy exploring new experiences that help me grow both personally and professionally, especially through community involvement and collaborative projects.</p>
+      </div>
+      <img src="formal-2.jpg" alt="Portrait">
+    </div>
+  </section>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#hobby">Hobby</a>
-    <a href="#memory">Memory</a>
-    <a href="#contact">Contact</a>
-</nav>
+  <section id="experience">
+    <h2>Experience & Skills</h2>
+    <div class="experience-grid">
+      <div class="experience-item">
+        <img src="images/org-asli.jpg" alt="Experience 1">
+        <div class="desc">Participated in a community outreach program with NGO Salimah in an Orang Asli village, where we prepared and served meals together.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/himpunan.jpg" alt="Experience 2">
+        <div class="desc">Participated in the Solidarity Assembly for the Liberation of Palestine held at Stadium Arena Kuala Lumpur, attended by Malaysia’s 10th Prime Minister. This event deepened my awareness and sense of global solidarity.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/qaseh.jpg" alt="Experience 3">
+        <div class="desc">Served as the program director for a CSR initiative at a senior and OKU care home, aimed at engaging and supporting the residents.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/edaran.jpg" alt="Experience 4">
+        <div class="desc">Participated in the Dapur Ramadan Program, helping distribute sahur meals to frontliners and the homeless around Sungai Petani.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/khidmat.jpg" alt="Experience 5">
+        <div class="desc">Served as an ahli khidmat for Festival Sunnah 7.0 in Alor Setar, an event that brought together Muslims from various states.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/pmgu.jpg" alt="Experience 6">
+        <div class="desc">Committee member of Perkampungan Menara Gading Zon Utara (PMGU), managing food services for a program that helped SPM and STPM leavers plan their academic pathways, attended by the Minister of Education, YB Fadhlina Sidek.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/mmk.jpg" alt="Experience 5">
+        <div class="desc">Served as a committee member for Malam Mesra Kolej (MMK) under UiTM and JPKNR, handling VIP invitations and arrangements.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/banjir.jpg" alt="Experience 5">
+        <div class="desc">Participated in a flood relief mission in Baling, Kedah, helping to clean affected homes and local mosques.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/uinn.jpg" alt="Experience 5">
+        <div class="desc">Attended Wacana Pemikiran Siddiq Fadzil & Ali Hasyimi at Universitas Islam Negeri (UIN) Ar-Raniry, Banda Aceh.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/sekipar.jpg" alt="Experience 5">
+        <div class="desc">Served as Secretariat for the UiTM Kedah Student Parliament, managing campus-level parliamentary activities and enhancing organizational skills.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/pmgk1.jpg" alt="Experience 5">
+        <div class="desc">Served as Head of the Food Committee for Perkampungan Menara Gading Kebangsaan (PMGK) at Universiti Malaya (UM), managing meals for participants, committee members, and VIPs throughout the program, while strengthening leadership skills.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/yatim.jpg" alt="Experience 5">
+        <div class="desc">Participated in an Iftar program with orphans and underprivileged children, organized by NGO PKPIM Kedah, engaging and supporting the community.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/yca.jpg" alt="Experience 5">
+        <div class="desc">Served as a facilitator for corporate team-building activities under Young Caliph Academy (YCA) at White Resort Camp, Penang, guiding participants through collaborative exercises and challenges.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/selawat.jpg" alt="Experience 5">
+        <div class="desc">Served as AJK Tugas-Tugas Khas for Sungai Petani Berselawat Ambang Tahun Baru at Dataran Zero, Sungai Petani, in collaboration with the Sungai Petani Parliament.</div>
+      </div>
+      <div class="experience-item">
+        <img src="images/qiraati.jpg" alt="Experience 5">
+        <div class="desc">Volunteered for Konvensyen Qiraati, a large-scale Quran completion event for primary school students, while developing organization skills.</div>
+      </div>
+    </div>
+  </section>
 
-<div class="container">
+  <section id="hobby">
+    <h2>Hobby</h2>
+    <div class="hobby-box">
+      <div class="hobby-gallery">
+        <div class="hobby-item"><img src="images/gitar.jpg" alt="vol1"><p>I enjoy playing the guitar, mostly classical, and I’m still learning new chords and songs. Some of the songs I can play include Perfect, Dinda, Sejiwa, and Janji Manis. I also love singing along while playing, which makes it even more fun. In the future, I hope to learn electric guitar and expand my skills.</p></div>
+        <div class="hobby-item"><img src="images/netflix.jpg" alt="vol2"><p>I enjoy watching Netflix in my free time, whether it’s movies or series. I don’t have a specific genre, though I tend to enjoy thrillers and horror. My favorite show is Grey’s Anatomy, which feels like my comfort series. Watching Netflix helps me relax, unwind, and take a break from reality</p></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ABOUT ME -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>My name is NurSaliha Najwa, and this website showcases my journey, achievements, hobbies, and memories.</p>
-        <img src="images/formal-2.jpg" alt="Portrait">
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-grid">
-            <img src="images/org-asli.jpg" alt="Experience 1">
-            <img src="images/himpunan.jpg" alt="Experience 2">
-            <img src="images/qaseh.jpg" alt="Experience 3">
-            <img src="images/edaran.jpg" alt="Experience 4">
-            <img src="images/khidmat.jpg" alt="Experience 5">
-            <img src="images/pmgu.jpg" alt="Experience 6">
-            <img src="images/mmk.jpg" alt="Experience 7">
-            <img src="images/banjir.jpg" alt="Experience 8">
-            <img src="images/uinn.jpg" alt="Experience 9">
-            <img src="images/sekipar.jpg" alt="Experience 10">
-            <img src="images/pmgk1.jpg" alt="Experience 11">
-            <img src="images/yatim.jpg" alt="Experience 12">
-            <img src="images/yca.jpg" alt="Experience 13">
-            <img src="images/selawat.jpg" alt="Experience 14">
-            <img src="images/qiraati.jpg" alt="Experience 15">
+  <section id="memory">
+    <h2>Memory</h2>
+    <p>This section is a glimpse into my life through photos, a simple yet personal snapshot that reflects the everyday moments and experiences that shape who I am.</p>
+    <div class="memory-box">
+        <div class="memory-gallery">
+           <img src="images/m1.jpg" alt="Memory 1">
+           <img src="images/m2.jpg" alt="Memory 2">
+           <img src="images/m3.jpg" alt="Memory 3">
+           <img src="images/m4.jpg" alt="Memory 4">
+           <img src="images/m5.jpg" alt="Memory 5">
+           <img src="images/m6.jpg" alt="Memory 6">
+           <img src="images/m7.jpg" alt="Memory 7">
+           <img src="images/m8.jpg" alt="Memory 8">
+           <img src="images/m9.jpg" alt="Memory 9">
+           <img src="images/m10.jpg" alt="Memory 10">
+           <img src="images/m11.jpg" alt="Memory 11">
+           <img src="images/m12.jpg" alt="Memory 12">
+           <img src="images/m13.jpg" alt="Memory 13">
+           <img src="images/m14.jpg" alt="Memory 14">
+           <img src="images/m15.jpg" alt="Memory 15">
+           <img src="images/m16.jpg" alt="Memory 16">
+           <img src="images/m17.jpg" alt="Memory 17">
+           <img src="images/m18.jpg" alt="Memory 18">
+           <img src="images/m19.jpg" alt="Memory 19">
+           <img src="images/m20.jpg" alt="Memory 20">
+           <img src="images/m21.jpg" alt="Memory 21">
+           <img src="images/m22.jpg" alt="Memory 22">
+           <img src="images/m23.jpg" alt="Memory 23">
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- HOBBY -->
-    <section id="hobby">
-        <h2>Hobby</h2>
-        <div class="hobby-images">
-            <img src="images/gitar.jpg" alt="Guitar Hobby">
-            <img src="images/netflix.jpg" alt="Netflix Hobby">
-        </div>
-    </section>
 
-    <!-- MEMORY -->
-    <section id="memory">
-        <h2>Memory</h2>
-        <p>This section is a glimpse into my life through photos.</p>
-        <div class="memory-box">
-            <img src="images/m1.jpg" alt="Memory 1">
-            <img src="images/m2.jpg" alt="Memory 2">
-            <img src="images/m3.jpg" alt="Memory 3">
-            <img src="images/m4.jpg" alt="Memory 4">
-            <img src="images/m5.jpg" alt="Memory 5">
-            <img src="images/m6.jpg" alt="Memory 6">
-            <img src="images/m7.jpg" alt="Memory 7">
-            <img src="images/m8.jpg" alt="Memory 8">
-            <img src="images/m9.jpg" alt="Memory 9">
-            <img src="images/m10.jpg" alt="Memory 10">
-            <img src="images/m11.jpg" alt="Memory 11">
-            <img src="images/m12.jpg" alt="Memory 12">
-            <img src="images/m13.jpg" alt="Memory 13">
-            <img src="images/m14.jpg" alt="Memory 14">
-            <img src="images/m15.jpg" alt="Memory 15">
-            <img src="images/m16.jpg" alt="Memory 16">
-            <img src="images/m17.jpg" alt="Memory 17">
-            <img src="images/m18.jpg" alt="Memory 18">
-            <img src="images/m19.jpg" alt="Memory 19">
-            <img src="images/m20.jpg" alt="Memory 20">
-            <img src="images/m21.jpg" alt="Memory 21">
-            <img src="images/m22.jpg" alt="Memory 22">
-            <img src="images/m23.jpg" alt="Memory 23">
-            <img src="images/m24.jpg" alt="Memory 24">
-        </div>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p>Let's connect through these platforms:</p>
+    <div class="contact-info">
+      <!-- Instagram -->
+      <a href="https://instagram.com/slhnjwa" target="_blank">
+        <i class="fa-brands fa-square-instagram"></i> Instagram
+      </a>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Let's connect through my socials:</p>
-        <p>
-            <a href="https://wa.me/0167217642"><i class="fa-solid fa-phone"></i> WhatsApp</a>
-            |
-            <a href="mailto:najwa@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            |
-            <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i> Facebook</a>
-        </p>
-    </section>
-</div>
+      <!-- Facebook -->
+      <a href="https://facebook.com/NurSalihaNajwa" target="_blank">
+        <i class="fa-brands fa-facebook"></i> Facebook
+      </a>
 
-<footer>
-    <p>© 2025 NurSaliha Najwa. All Rights Reserved.</p>
-</footer>
+      <!-- Email -->
+      <a href="mailto:salihanajwaa@gmail.com">
+        <i class="fa-solid fa-envelope"></i> salihanajwaa@gmail.com
+      </a>
 
+      <!-- WhatsApp -->
+      <a href="https://wa.me/60167217642" target="_blank">
+        <i class="fa-solid fa-phone"></i> +60 16-721 7642
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 15px; /* space between images */
+}
+
+.memory-gallery img {
+    width: 100%; /* make images fill the grid cell */
+    height: auto;
+    border-radius: 8px; /* optional: rounded corners */
+    object-fit: cover;
+}
+</style>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+<!-- Include Font Awesome in your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+
+  <footer>© 2025 NurSaliha Najwa</footer>
+
+  <button id="scrollTopBtn" onclick="topFunction()"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    const menuLinks = document.querySelectorAll('nav .menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    const btn = document.getElementById('scrollTopBtn');
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
